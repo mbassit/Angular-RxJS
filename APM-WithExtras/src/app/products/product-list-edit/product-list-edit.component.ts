@@ -27,6 +27,7 @@ export class ProductListEditComponent {
           selectedCategoryId ? product.categoryId === selectedCategoryId : true
         )),
       catchError(err => {
+        console.log(`Feeding ProductListEditComponent.errorMessage$ observable with value: ${JSON.stringify(err)}`)
         this.errorMessageSubject.next(err);
         return EMPTY;
       })
@@ -60,7 +61,7 @@ export class ProductListEditComponent {
   onDelete(product: Product): void {
     this.productEditService.deleteProduct(product);
   }
-  
+
   onSelected(categoryId: string): void {
     this.categorySelectedSubject.next(+categoryId);
   }

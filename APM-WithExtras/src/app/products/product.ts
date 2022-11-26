@@ -51,3 +51,14 @@ export interface ProductWithSupplier {
   category?: string;
   supplier?: string;
 }
+
+/* Defines the product data as retrieved from the backend server API */
+export interface ProductFromAPI {
+    p_id: number;
+    p_nam: string;
+    p_cd: string;
+    p_des: string;
+    p_s: string;
+    p_p: number;
+    p_c_fk_id: number;
+  }
